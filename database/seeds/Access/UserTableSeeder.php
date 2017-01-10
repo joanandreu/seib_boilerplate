@@ -32,7 +32,7 @@ class UserTableSeeder extends Seeder
         //Add the master administrator, user id of 1
         $users = [
             [
-                'name'              => 'Admin Istrator',
+                'name'              => 'Administrador',
                 'email'             => 'admin@admin.com',
                 'password'          => bcrypt('1234'),
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
@@ -42,7 +42,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'name'              => 'Backend User',
-                'email'             => 'executive@executive.com',
+                'email'             => 'backend@backend.com',
                 'password'          => bcrypt('1234'),
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
