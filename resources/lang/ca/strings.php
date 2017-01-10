@@ -23,14 +23,14 @@ return [
         ],
 
         'dashboard' => [
-            'title'   => 'Panel de Administración',
-            'welcome' => 'Bienvenido',
+            'title'   => 'Panell de Gestió',
+            'welcome' => 'Benvingut',
         ],
 
         'general' => [
             'all_rights_reserved' => 'Todos los derechos reservados.',
             'are_you_sure'        => 'Está seguro?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
+            'boilerplate_link'    => '',
             'continue'            => 'Continuar',
             'member_since'        => 'Miembro desde',
             'minutes'             => ' minutos',
