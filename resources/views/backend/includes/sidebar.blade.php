@@ -14,6 +14,12 @@
                 </a>
             </li>
 
+        <!-- Sidebar Menu -->
+
+        <ul class="sidebar-menu">
+            @include('backend.includes.menu')
+        </ul>
+        <!-- /.sidebar-menu -->
            
 
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>
