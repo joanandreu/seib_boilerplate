@@ -53,7 +53,8 @@
                     </ul>
                 </li>
             @endauth
-            
+           
+            @permission('manage-logs')
             <li class="{{ Active::pattern('admin/log-viewer*') }} treeview">
                 <a href="#">
                     <i class="fa fa-list"></i>
@@ -76,6 +77,7 @@
                     </li>
                 </ul>
             </li>
+            @endauth
         </ul><!-- /.sidebar-menu -->
     </section><!-- /.sidebar -->
 </aside>
