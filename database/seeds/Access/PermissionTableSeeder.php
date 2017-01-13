@@ -43,7 +43,7 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $viewBackend = new $permission_model();
         $viewBackend->name = 'view-backend';
-        $viewBackend->display_name = 'View Backend';
+        $viewBackend->display_name = 'Acceso backend';
         $viewBackend->sort = 1;
         $viewBackend->created_at = Carbon::now();
         $viewBackend->updated_at = Carbon::now();
@@ -52,11 +52,21 @@ class PermissionTableSeeder extends Seeder
         /**
          * Access Permissions.
          */
+
+        $permission_model = config('access.permission');
+        $manageUsers = new $permission_model();
+        $manageUsers->name = 'manage-bd';
+        $manageUsers->display_name = 'Administrar BD';
+        $manageUsers->sort = 2;
+        $manageUsers->created_at = Carbon::now();
+        $manageUsers->updated_at = Carbon::now();
+        $manageUsers->save();
+
         $permission_model = config('access.permission');
         $manageUsers = new $permission_model();
         $manageUsers->name = 'manage-users';
-        $manageUsers->display_name = 'Manage Users';
-        $manageUsers->sort = 2;
+        $manageUsers->display_name = 'Gestionar usuarios';
+        $manageUsers->sort = 3;
         $manageUsers->created_at = Carbon::now();
         $manageUsers->updated_at = Carbon::now();
         $manageUsers->save();
@@ -64,11 +74,47 @@ class PermissionTableSeeder extends Seeder
         $permission_model = config('access.permission');
         $manageRoles = new $permission_model();
         $manageRoles->name = 'manage-roles';
-        $manageRoles->display_name = 'Manage Roles';
-        $manageRoles->sort = 3;
+        $manageRoles->display_name = 'Gestionar Roles';
+        $manageRoles->sort = 4;
         $manageRoles->created_at = Carbon::now();
         $manageRoles->updated_at = Carbon::now();
         $manageRoles->save();
+
+        $permission_model = config('access.permission');
+        $manageRoles = new $permission_model();
+        $manageRoles->name = 'gestionar-entidades';
+        $manageRoles->display_name = 'Gestionar todas las Entidades';
+        $manageRoles->sort = 5;
+        $manageRoles->created_at = Carbon::now();
+        $manageRoles->updated_at = Carbon::now();
+        $manageRoles->save();
+
+        $permission_model = config('access.permission');
+        $manageRoles = new $permission_model();
+        $manageRoles->name = 'gestionar-susentidades';
+        $manageRoles->display_name = 'Gestionar Entidades asignadas';
+        $manageRoles->sort = 6;
+        $manageRoles->created_at = Carbon::now();
+        $manageRoles->updated_at = Carbon::now();
+        $manageRoles->save();
+
+        $permission_model = config('access.permission');
+        $manageRoles = new $permission_model();
+        $manageRoles->name = 'ver-entidades';
+        $manageRoles->display_name = 'Ver todas las Entidades';
+        $manageRoles->sort = 7;
+        $manageRoles->created_at = Carbon::now();
+        $manageRoles->updated_at = Carbon::now();
+        $manageRoles->save();
+
+        $permission_model = config('access.permission');
+        $manageRoles = new $permission_model();
+        $manageRoles->name = 'ver-susentidades';
+        $manageRoles->display_name = 'Ver Entidades asignadas';
+        $manageRoles->sort = 8;
+        $manageRoles->created_at = Carbon::now();
+        $manageRoles->updated_at = Carbon::now();
+        $manageRoles->save();       
 
         if (DB::connection()->getDriverName() == 'mysql') {
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
