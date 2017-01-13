@@ -2,8 +2,8 @@
 
 @section('page-header')
     <h1>
-        Log Viewer
-        <small>By <a href="https://github.com/ARCANEDEV/LogViewer" target="_blank">ARCANEDEV</a></small>
+        Visor de Logs
+       
     </h1>
 @endsection
 
@@ -25,10 +25,10 @@
 
                             <div class="group-btns pull-right">
                                 <a href="{{ route('admin.log-viewer::logs.download', [$log->date]) }}" class="btn btn-xs btn-success">
-                                    <i class="fa fa-download"></i> DOWNLOAD
+                                    <i class="fa fa-download"></i> DESCARGAR
                                 </a>
                                 <a href="#delete-log-modal" class="btn btn-xs btn-danger" data-toggle="modal">
-                                    <i class="fa fa-trash-o"></i> DELETE
+                                    <i class="fa fa-trash-o"></i> BORRAR
                                 </a>
                             </div>
                         </div>
