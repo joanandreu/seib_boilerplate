@@ -5,5 +5,5 @@
         <a href="#" target="_blank">Seib112</a>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; {{ date('Y') }} <a href="#">{{ app_name() }}</a>.</strong> {{ trans('strings.backend.general.all_rights_reserved') }}
+    <strong>Copyright &copy; {{ date('Y') }} <a href="#">CAIB</a>.</strong> {{ trans('strings.backend.general.all_rights_reserved') }}
 </footer>
