@@ -44,8 +44,8 @@ class EntidadController extends AppBaseController
      */
     public function create()
     {
-        $tipoentidads = Tipoentidad::pluck('tipo', 'id');
-        $tipofuncional = Tipoentidad::pluck('tipofuncional', 'id');    
+        $tipoentidads = Tipoentidad::pluck('tipo','id');
+        $tipofuncional = Tipoentidad::pluck('id','tipofuncional');    
         return view('backend.entidads.create', compact('tipoentidads','tipofuncional'));
     }
 
@@ -62,7 +62,7 @@ class EntidadController extends AppBaseController
 
         $entidad = $this->entidadRepository->create($input);
 
-        Flash::success('Entidad saved successfully.');
+        Flash::success('Entidad guardada.');
 
         return redirect(route('backend.entidads.index'));
     }
@@ -77,14 +77,15 @@ class EntidadController extends AppBaseController
     public function show($id)
     {
         $entidad = $this->entidadRepository->findWithoutFail($id);
-
+        $tipoentidads = Tipoentidad::pluck('tipo', 'tipo');
+        $tipofuncional = Tipoentidad::pluck('tipofuncional', 'tipofuncional'); 
         if (empty($entidad)) {
-            Flash::error('Entidad not found');
+            Flash::error('Entidad no encontrada');
 
             return redirect(route('backend.entidads.index'));
         }
 
-        return view('backend.entidads.show')->with('entidad', $entidad);
+        return view('backend.entidads.show', compact('tipoentidads','tipofuncional'))->with('entidad', $entidad);
     }
 
     /**
@@ -97,14 +98,15 @@ class EntidadController extends AppBaseController
     public function edit($id)
     {
         $entidad = $this->entidadRepository->findWithoutFail($id);
-        $tipoentidads = Tipoentidad::pluck('tipo', 'id');
+        $tipoentidads = Tipoentidad::pluck('tipo', 'tipo');
+        $tipofuncional = Tipoentidad::pluck('tipofuncional', 'tipofuncional'); 
         if (empty($entidad)) {
-            Flash::error('Entidad not found');
+            Flash::error('Entidad no encontrada');
 
             return redirect(route('backend.entidads.index'));
         }
 
-        return view('backend.entidads.edit', compact('tipoentidads'))->with('entidad', $entidad);
+        return view('backend.entidads.edit', compact('tipoentidads','tipofuncional'))->with('entidad', $entidad);
     }
 
     /**
@@ -120,14 +122,14 @@ class EntidadController extends AppBaseController
         $entidad = $this->entidadRepository->findWithoutFail($id);
 
         if (empty($entidad)) {
-            Flash::error('Entidad not found');
+            Flash::error('Entidad no encontrada');
 
             return redirect(route('backend.entidads.index'));
         }
 
         $entidad = $this->entidadRepository->update($request->all(), $id);
 
-        Flash::success('Entidad updated successfully.');
+        Flash::success('Entidad actualizada.');
 
         return redirect(route('backend.entidads.index'));
     }
@@ -144,14 +146,14 @@ class EntidadController extends AppBaseController
         $entidad = $this->entidadRepository->findWithoutFail($id);
 
         if (empty($entidad)) {
-            Flash::error('Entidad not found');
+            Flash::error('Entidad no encontrada');
 
             return redirect(route('backend.entidads.index'));
         }
 
         $this->entidadRepository->delete($id);
 
-        Flash::success('Entidad deleted successfully.');
+        Flash::success('Entidad borrada.');
 
         return redirect(route('backend.entidads.index'));
     }
