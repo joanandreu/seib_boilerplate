@@ -241,7 +241,6 @@ class Entidad extends Model
         'entidad' => 'required',
         'abreviatura' => 'required',
         'tipoentidad' => 'required',
-        'tipofuncional' => 'required',
         'cif' => 'required',
         'telefonoprincipal' => 'required',
         'emailprincipal' => 'required',
