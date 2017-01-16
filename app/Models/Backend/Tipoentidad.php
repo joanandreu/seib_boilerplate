@@ -4,7 +4,7 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Nestable\NestableTrait;
 /**
  * @SWG\Definition(
  *      definition="Tipoentidad",
@@ -52,12 +52,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Tipoentidad extends Model
 {
     use SoftDeletes;
-
+    use NestableTrait;
     public $table = 'tipoentidads';
     
 
     protected $dates = ['deleted_at'];
-
+    protected $parent = 'tipopadre';
 
     public $fillable = [
         'tipo',
