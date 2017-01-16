@@ -1,9 +1,6 @@
 <table class="table table-responsive" id="entidads-table">
     <thead>
         <th>Nombre</th>
-        <th>Tipo Entidad</th>
-        <th>Tipo funcional</th>
-        <th>Nivel</th>
         <th>Telefono</th>
         <th>Email</th>     
         <th>Responsable</th>  
@@ -14,9 +11,6 @@
     @foreach($entidads as $entidad)
         <tr>
             <td>{!! $entidad->entidad !!}</td>
-            <td>{!! $entidad->tipoentidad !!}</td>
-            <td>{!! $entidad->tipofuncional !!}</td>
-            <td>{!! $entidad->nivel !!}</td>
             <td>{!! $entidad->telefonoprincipal !!}</td>
             <td>{!! $entidad->emailprincipal !!}</td>
             <td>{!! $entidad->responsable !!}</td>
