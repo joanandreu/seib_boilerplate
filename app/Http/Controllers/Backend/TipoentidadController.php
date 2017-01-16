@@ -31,8 +31,8 @@ class TipoentidadController extends AppBaseController
     public function index(Request $request)
     {
         $this->tipoentidadRepository->pushCriteria(new RequestCriteria($request));
-        $tipoentidads = $this->tipoentidadRepository->all();
-
+      $tipoentidads = $this->tipoentidadRepository->all();
+        
         return view('backend.tipoentidads.index')
             ->with('tipoentidads', $tipoentidads);
     }
@@ -97,7 +97,7 @@ class TipoentidadController extends AppBaseController
     public function edit($id)
     {
         $tipoentidad = $this->tipoentidadRepository->findWithoutFail($id);
-        $tipoentidadspadre = Tipoentidad::pluck('tipo', 'id');
+         $tipoentidadspadre = Tipoentidad::pluck('tipo', 'id');
         if (empty($tipoentidad)) {
             Flash::error('Tipoentidad not found');
 
