@@ -3,16 +3,34 @@
         <th>Tipo</th>
         <th>Abreviatura</th>
         <th>Tipofuncional</th>
-        <th>Tipopadre</th>
+       
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($tipoentidads as $tipoentidad)
         <tr>
-            <td>{!! $tipoentidad->tipo !!}</td>
+            <td> 
+            @if ($tipoentidad->tipopadre  == '1')  
+           -  
+            @endif
+            @if ($tipoentidad->tipopadre  == '2')  
+           - - 
+            @endif
+            @if ($tipoentidad->tipopadre  == '3')  
+           - - -
+            @endif
+             @if ($tipoentidad->tipopadre  == '4')  
+           - - - -
+            @endif
+            @if ($tipoentidad->tipopadre  == '5')  
+           - - - -
+            @endif
+            
+            {!! $tipoentidad->tipo !!}
+            </td>
             <td>{!! $tipoentidad->abreviatura !!}</td>
             <td>{!! $tipoentidad->tipofuncional !!}</td>
-            <td>{!! $tipoentidad->tipopadre !!}</td>
+            
             <td>
                 {!! Form::open(['route' => ['backend.tipoentidads.destroy', $tipoentidad->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
