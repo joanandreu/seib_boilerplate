@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Backend\Tipoentidad;
 
 class TipoentidadController extends AppBaseController
 {
@@ -43,9 +44,9 @@ class TipoentidadController extends AppBaseController
      */
     public function create()
     {
-
+          $tipoentidadspadre = Tipoentidad::pluck('tipo', 'id');
         
-        return view('backend.tipoentidads.create');
+        return view('backend.tipoentidads.create', compact('tipoentidadspadre'));
     }
 
     /**
@@ -76,14 +77,14 @@ class TipoentidadController extends AppBaseController
     public function show($id)
     {
         $tipoentidad = $this->tipoentidadRepository->findWithoutFail($id);
-
+        $tipoentidadspadre = Tipoentidad::pluck('tipo', 'id');
         if (empty($tipoentidad)) {
             Flash::error('Tipoentidad not found');
 
             return redirect(route('backend.tipoentidads.index'));
         }
 
-        return view('backend.tipoentidads.show')->with('tipoentidad', $tipoentidad);
+        return view('backend.tipoentidads.show', compact('tipoentidadspadre'))->with('tipoentidad', $tipoentidad);
     }
 
     /**
@@ -96,14 +97,14 @@ class TipoentidadController extends AppBaseController
     public function edit($id)
     {
         $tipoentidad = $this->tipoentidadRepository->findWithoutFail($id);
-
+        $tipoentidadspadre = Tipoentidad::pluck('tipo', 'id');
         if (empty($tipoentidad)) {
             Flash::error('Tipoentidad not found');
 
             return redirect(route('backend.tipoentidads.index'));
         }
 
-        return view('backend.tipoentidads.edit')->with('tipoentidad', $tipoentidad);
+        return view('backend.tipoentidads.edit', compact('tipoentidadspadre'))->with('tipoentidad', $tipoentidad);
     }
 
     /**

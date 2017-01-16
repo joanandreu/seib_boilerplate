@@ -25,7 +25,8 @@
 <!-- Tipopadre Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tipopadre', 'Tipopadre:') !!}
-    {!! Form::text('tipopadre', null, ['class' => 'form-control']) !!}
+    {!! Form::select('tipopadre',$tipoentidadspadre, null, ['class' => 'form-control']) !!} 
+    
 </div>
 
 <!-- Submit Field -->
