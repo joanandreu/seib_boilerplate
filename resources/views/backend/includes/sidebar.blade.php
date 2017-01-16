@@ -13,7 +13,7 @@
                     <span>{{ trans('menus.backend.sidebar.dashboard') }}</span>
                 </a>
             </li>
-            <li class="{{ Active::pattern('backend/entidads') }}">
+            <li class="{{ Active::pattern('admin/dashboard') }}">
                 <a href="{!! route('backend.entidads.index') !!}">
                     <i class="fa fa-cubes"></i>
                     <span>Gestión de Entidades</span>
