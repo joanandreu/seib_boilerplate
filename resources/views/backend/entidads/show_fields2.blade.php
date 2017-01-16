@@ -1,8 +1,8 @@
+<div class="row">
+
+
 <!-- Entidad Field -->
-<div class="form-group col-sm-3">
-    {!! Form::label('entidad', 'Nombre o Razón Social:') !!}
-    {!! Form::text('entidad', null, ['class' => 'form-control']) !!}
-</div>
+
 
 <!-- Abreviatura Field -->
 <div class="form-group col-sm-3">
@@ -15,7 +15,7 @@
     {!! Form::label('tipoentidad', 'Tipo Entidad:') !!}
     {!! Form::select('tipoentidad',$tipoentidads , null, ['class' => 'form-control']) !!}
 </div>
- 
+ </div>
  
 
 <!-- Nivel Field -->
@@ -37,14 +37,13 @@
 <!-- Telefonoprincipal Field -->
 <div class="form-group col-sm-2">
     {!! Form::label('telefonoprincipal', 'Telefono principal:') !!}
-    {!! Form::text('telefonoprincipal', null, ['class' => 'form-control']) !!}
+    {!! Form::number('telefonoprincipal', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Descripcion Telprincipal Field -->
 <div class="form-group col-sm-2">
     {!! Form::label('descripcion_telprincipal', 'Descripción Teléfono principal:') !!}
     {!! Form::text('descripcion_telprincipal', null, ['class' => 'form-control']) !!}
-    
 </div>
  
 <!-- Emailprincipal Field -->
@@ -80,7 +79,7 @@
 <!-- Ine Via Field -->
 <div class="form-group col-sm-2">
     {!! Form::label('ine_via', 'INE Via:') !!}
-    {!! Form::text('ine_via', null, ['class' => 'form-control']) !!}
+    {!! Form::number('ine_via', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Numero Field -->
@@ -110,14 +109,7 @@
 <!-- Tipo Coordenadas Field -->
 <div class="form-group col-sm-2">
     {!! Form::label('tipo_coordenadas', 'Tipo Coordenadas:') !!}
-    {!! Form::select('tipo_coordenadas', 
-    ['Coordenadas UTM' => 'Coordenadas UTM',
-     'Geográficas Grados Decimales' => 'Geográficas Grados Decimales',
-     'Geográficas Minutos Decimales' => 'Geográficas Minutos Decimales',
-     'Geográficas Grados' => 'Geográficas Grados',
-     'Minutos y Segundos' => 'Minutos y Segundos'
-     
-     ], null, ['class' => 'form-control']) !!}
+    {!! Form::text('tipo_coordenadas', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Lon Field -->
