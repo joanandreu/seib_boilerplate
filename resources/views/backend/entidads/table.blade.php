@@ -5,7 +5,6 @@
         <th>Tipo funcional</th>
         <th>Nivel</th>
         <th>Telefono</th>
-        
         <th>Email</th>     
         <th>Responsable</th>  
         <th>Municipio</th>  
