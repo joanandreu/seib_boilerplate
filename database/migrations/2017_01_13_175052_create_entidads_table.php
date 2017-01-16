@@ -17,6 +17,7 @@ class CreateEntidadsTable extends Migration
             $table->increments('id');
             $table->string('entidad');
             $table->string('abreviatura', 30);
+            $table->string('parent_id');
             $table->string('tipoentidad');
             $table->string('tipofuncional');
             $table->string('nivel');
